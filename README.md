@@ -17,10 +17,10 @@ CS-458-PROJECT/
 │   │   │   ├── login.py
 │   │   ├── __main__.py
 │   │   ├── main.py
-│   ├── venv/  # Virtual environment (not included in repo)
+│   ├── venv/  
 │
 │── frontend/
-│   ├── node_modules/  # Dependencies (not included in repo)
+│   ├── node_modules/  
 │   ├── public/
 │   │   ├── vite.svg
 │   ├── src/
