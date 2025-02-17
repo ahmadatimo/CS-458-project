@@ -73,6 +73,7 @@ CS-458-PROJECT/
    python -m app
    ```
    The backend should now be running at `http://localhost:8000`.
+   The backend endpoints should be running at `http://localhost:8000/docs`.
 
 ### Running the Frontend
 #### Prerequisites:
