@@ -76,7 +76,7 @@ CS-458-PROJECT/
 
 ### Running the Frontend
 #### Prerequisites:
-- Node.js and npm installed
+- npm installed
 
 #### Steps:
 1. Navigate to the frontend folder:
