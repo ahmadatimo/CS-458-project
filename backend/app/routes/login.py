@@ -17,8 +17,8 @@ class LoginRequest(BaseModel):
 # Simulated user database (replace with real database logic)
 fake_users_db = {
     
-    "test@example.com": {"password": "123456","failed_attempts": 0,"lockout_time": None}, 
-    "mona@gmail.com": {"password": "mona","failed_attempts": 0,"lockout_time": None},
+    "test@example.com": {"password": "abc123","failed_attempts": 0,"lockout_time": None}, 
+    "lupin@hogwarts.com": {"password": "eatCh0klate","failed_attempts": 0,"lockout_time": None},
     "john.doe@example.com": {"password": "password123","failed_attempts": 0,"lockout_time": None},
     "alice.smith@example.com": {"password": "alice123","failed_attempts": 0,"lockout_time": None},
     "bob.jones@example.com": {"password": "bobpass","failed_attempts": 0,"lockout_time": None},
