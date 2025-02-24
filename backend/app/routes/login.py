@@ -40,7 +40,7 @@ def login(request: LoginRequest):
         remaining_time = (user["lockout_time"] - datetime.now()).seconds  # Get remaining seconds
         raise HTTPException(status_code=403, detail=f"Too many failed attempts. Try again in {remaining_time} seconds.")
 
-    def lockout_mechanisim(): 
+    def lockout_mechanism(): 
         user["lockout_time"] = datetime.now() + LOCKOUT_DURATION
         check_lockout()
     
@@ -66,7 +66,7 @@ def login(request: LoginRequest):
             raise HTTPException(status_code=403, detail="password must be at most 15 characters")
 
         if user["failed_attempts"] >= MAX_ATTEMPTS:
-            lockout_mechanisim()
+            lockout_mechanism()
 
         raise HTTPException(status_code=401, detail="Invalid password try again")
 
