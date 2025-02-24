@@ -61,6 +61,7 @@ export default function App() {
 
           <form onSubmit={handleLogin} className="space-y-4">
             <input
+              name = "email"
               type="email"
               placeholder="Email"
               className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -69,6 +70,7 @@ export default function App() {
               required
             />
             <input
+              name = "password"
               type="password"
               placeholder="Password"
               className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -77,6 +79,7 @@ export default function App() {
               required
             />
             <button
+              name = "Submit"
               type="submit"
               className="w-full bg-blue-500 text-white p-3 rounded-lg font-semibold hover:bg-blue-600 transition duration-300"
               disabled={loading}
@@ -91,13 +94,6 @@ export default function App() {
               <GoogleLogin onSuccess={handleGoogleSuccess} onError={handleGoogleFailure} />   
             </GoogleOAuthProvider>
           </div>
-
-          <p className="mt-4 text-center text-gray-500 text-sm">
-            Don't have an account?{" "}
-            <a href="#" className="text-blue-500 font-semibold hover:underline">
-              Sign up
-            </a>
-          </p>
         </div>
       </div>
   );
