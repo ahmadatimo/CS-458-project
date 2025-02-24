@@ -15,7 +15,7 @@ class LoginRequest(BaseModel):
     password: str
 
 # Simulated user database (replace with real database logic)
-fake_users_db = {
+users_db = {
     
     "test@example.com": {"password": "abc123","failed_attempts": 0,"lockout_time": None}, 
     "lupin@hogwarts.com": {"password": "eatCh0klate","failed_attempts": 0,"lockout_time": None},
@@ -30,7 +30,7 @@ fake_users_db = {
 
 @router.post("/login")
 def login(request: LoginRequest):
-    user = fake_users_db.get(request.email)
+    user = users_db.get(request.email)
 
     def reset_lockout():
         user["failed_attempts"] = 0
@@ -43,6 +43,17 @@ def login(request: LoginRequest):
     def lockout_mechanism(): 
         user["lockout_time"] = datetime.now() + LOCKOUT_DURATION
         check_lockout()
+    
+    def check_length():
+        if len(request.password) <= 5:
+            raise HTTPException(status_code=403, detail="password must be at least 5 characters")
+        
+        if len(request.password) >= 15:
+            raise HTTPException(status_code=403, detail="password must be at most 15 characters")
+
+        if isinstance(request.password,int) or isinstance(request.password,str) :
+            raise HTTPException(status_code=403, detail="password must contain numbers and letters")
+        
     
     if not user:
         raise HTTPException(status_code=401, detail="Invalid email")
@@ -59,14 +70,7 @@ def login(request: LoginRequest):
     if request.password != user["password"]:
         user["failed_attempts"] += 1
 
-        if len(request.password) <= 5:
-            raise HTTPException(status_code=403, detail="password must be at least 5 characters")
-        
-        if len(request.password) >= 15:
-            raise HTTPException(status_code=403, detail="password must be at most 15 characters")
-
-        if isinstance(request.password,int) or isinstance(request.password,str) :
-            raise HTTPException(status_code=403, detail="password must contain numbers and letters")
+        check_length()
 
         if user["failed_attempts"] >= MAX_ATTEMPTS:
             lockout_mechanism()

@@ -61,8 +61,7 @@ CS-458-PROJECT/
 2. Create and activate a virtual environment:
    ```sh
    python -m venv venv
-   source venv/bin/activate   # On macOS/Linux
-   venv\Scripts\activate      # On Windows
+   venv\Scripts\activate      # On Windows & Mac
    ```
 3. Install dependencies:
    ```sh
@@ -70,7 +69,8 @@ CS-458-PROJECT/
    ```
 4. Run the backend server:
    ```sh
-   python -m app
+   python -m app #On Windows
+   python3 -m app #On Mac
    ```
    The backend should now be running at `http://localhost:8000`.
    The backend endpoints should be running at `http://localhost:8000/docs`.

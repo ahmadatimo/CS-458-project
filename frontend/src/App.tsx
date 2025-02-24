@@ -1,16 +1,14 @@
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
-import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
-import { jwtDecode } from "jwt-decode";
 import "react-toastify/dist/ReactToastify.css";
+import EmailPasswordLogin from "./NormalLogin.tsx";
+import GoogleLoginComponent from "./GoogleLogin.tsx";
+import { jwtDecode } from "jwt-decode";
 
 export default function App() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleLogin = async (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
+  const handleLogin = async (email: string, password: string) => {
     setLoading(true);
 
     try {
@@ -33,7 +31,6 @@ export default function App() {
     }
   };
 
-  // Handle Google login success
   const handleGoogleSuccess = (credentialResponse: { credential?: string }) => {
     if (credentialResponse.credential) {
       const decoded = jwtDecode<{ name: string }>(credentialResponse.credential);
@@ -46,55 +43,23 @@ export default function App() {
     }
   };
 
-  // Handle Google login failure
   const handleGoogleFailure = () => {
     toast.error("❌ Google Login Failed.", { position: "top-center" });
   };
 
   return (
-      <div className="flex h-screen items-center justify-center bg-gradient-to-r from-purple-600 to-blue-500">
-        <ToastContainer />
-        <div className="bg-white p-8 shadow-2xl rounded-2xl w-96">
-          <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-6">
-            Sign In
-          </h2>
+    <div className="flex h-screen items-center justify-center bg-gradient-to-r from-purple-600 to-blue-500">
+      <ToastContainer />
+      <div className="bg-white p-8 shadow-2xl rounded-2xl w-96">
+        <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-6">Sign In</h2>
 
-          <form onSubmit={handleLogin} className="space-y-4">
-            <input
-              name = "email"
-              type="email"
-              placeholder="Email"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <input
-              name = "password"
-              type="password"
-              placeholder="Password"
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-            <button
-              name = "Submit"
-              type="submit"
-              className="w-full bg-blue-500 text-white p-3 rounded-lg font-semibold hover:bg-blue-600 transition duration-300"
-              disabled={loading}
-            >
-              {loading ? "Logging in..." : "Login"}
-            </button>
-          </form>
+        <EmailPasswordLogin onLogin={handleLogin} loading={loading} />
 
-          <div className="mt-6 text-center space-y-3">
-            <p className="text-gray-600 text-sm">Or login with</p>
-            <GoogleOAuthProvider clientId="227145979883-8tabm5ujec4plc9q0ueidk5rignmoicm.apps.googleusercontent.com">
-              <GoogleLogin onSuccess={handleGoogleSuccess} onError={handleGoogleFailure} />   
-            </GoogleOAuthProvider>
-          </div>
+        <div className="mt-6 text-center space-y-3">
+          <p className="text-gray-600 text-sm">Or login with</p>
+          <GoogleLoginComponent onSuccess={handleGoogleSuccess} onFailure={handleGoogleFailure} />
         </div>
       </div>
+    </div>
   );
 }
