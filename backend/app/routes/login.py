@@ -65,6 +65,9 @@ def login(request: LoginRequest):
         if len(request.password) >= 15:
             raise HTTPException(status_code=403, detail="password must be at most 15 characters")
 
+        if isinstance(request.password,int) or isinstance(request.password,str) :
+            raise HTTPException(status_code=403, detail="password must contain numbers and letters")
+
         if user["failed_attempts"] >= MAX_ATTEMPTS:
             lockout_mechanism()
 
