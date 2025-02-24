@@ -6,7 +6,7 @@ router = APIRouter()
 
 # Constants
 MAX_ATTEMPTS = 5
-LOCKOUT_DURATION = timedelta(minutes=5)  # Lock user for 10 minutes
+LOCKOUT_DURATION = timedelta(minutes=1)  # Lock user for 10 minutes
 
 
 # Pydantic model for login request
