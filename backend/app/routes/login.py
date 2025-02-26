@@ -51,7 +51,7 @@ def login(request: LoginRequest):
         if len(request.password) >= 15:
             raise HTTPException(status_code=403, detail="password must be at most 15 characters")
 
-        if isinstance(request.password,int) or isinstance(request.password,str) :
+        if not any(c.isalpha() for c in request.password) or not any(c.isdigit() for c in request.password):
             raise HTTPException(status_code=403, detail="password must contain numbers and letters")
         
     

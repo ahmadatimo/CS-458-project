@@ -36,20 +36,6 @@ export default function LoginPage() {
     }
   };
 
-  const handleGoogleSuccess = (credentialResponse: { credential?: string }) => {
-    if (credentialResponse.credential) {
-      const decoded = jwtDecode<{ name: string }>(credentialResponse.credential);
-      console.log("Google User:", decoded);
-      toast.success(`✅ Welcome, ${decoded.name}!`, { position: "top-center" });
-    } else {
-      toast.error("❌ Google Login Failed: No credential received.", { position: "top-center" });
-    }
-  };
-
-  const handleGoogleFailure = () => {
-    toast.error("❌ Google Login Failed.", { position: "top-center" });
-  };
-
   return (
     <div className="flex h-screen items-center justify-center bg-gradient-to-r from-purple-600 to-blue-500">
       <ToastContainer />
@@ -60,7 +46,7 @@ export default function LoginPage() {
 
         <div className="mt-6 text-center space-y-3">
           <p className="text-gray-600 text-sm">Or login with</p>
-          <GoogleLoginComponent onSuccess={handleGoogleSuccess} onFailure={handleGoogleFailure} />
+          <GoogleLoginComponent />
         </div>
       </div>
     </div>

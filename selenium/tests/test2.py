@@ -16,28 +16,60 @@ driver.get("http://localhost:3000")
 # appreciate the page
 time.sleep(1)
 
-# identify the elements
-email = driver.find_element(By.NAME, "email")
+# assign the elements
+email = driver.find_element(By.NAME,"email")
 password = driver.find_element(By.NAME, "password")
 login = driver.find_element(By.NAME, "submit")
 
+# insert email:
+email.send_keys("lupin@hogwarts.com")
 time.sleep(1)
 
-# add an email
-email.send_keys("lupin@hogwarts.com")
-login.send_keys(Keys.ENTER)
-time.sleep(2)
+# enter short password:
+password.send_keys("123")
+time.sleep(1)
 
-# add a password
-password.send_keys("eatCh0klate")
-email.clear()
+# submit the first test:
 login.send_keys(Keys.ENTER)
-time.sleep(2)
-
-# log in finally
-email.send_keys("lupin@hogwarts.com")
+time.sleep(1)
 password.clear()
+time.sleep(1)
+
+# enter long password:
+password.send_keys("abcdefghijklmnopqrstu")
+time.sleep(1)
+
+# submit the first test:
+login.send_keys(Keys.ENTER)
+time.sleep(1)
+password.clear()
+time.sleep(1)
+
+# enter numeric password:
+password.send_keys("123456")
+time.sleep(1)
+
+# submit the first test:
+login.send_keys(Keys.ENTER)
+time.sleep(1)
+password.clear()
+time.sleep(1)
+
+# enter letters password:
+password.send_keys("abcdefhijkl")
+time.sleep(1)
+
+# submit the first test:
+login.send_keys(Keys.ENTER)
+time.sleep(1)
+password.clear()
+time.sleep(1)
+
+# enter correct password:
 password.send_keys("eatCh0klate")
+time.sleep(1)
+
+# submit the first test:
 login.send_keys(Keys.ENTER)
 time.sleep(3)
 

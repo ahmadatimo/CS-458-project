@@ -12,7 +12,7 @@ export default function SuccessfulLogin() {
           className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300"
           onClick={() =>navigate("/")} // Change this based on navigation
         >
-          Go to LoginPage
+          Go to Login Page
         </button>
       </div>
     </div>
