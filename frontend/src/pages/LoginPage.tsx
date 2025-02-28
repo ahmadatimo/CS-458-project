@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import EmailPasswordLogin from "../components/NormalLogin.tsx";
+import EmailPasswordLogin from "../components/NormalLoginComponent.tsx";
 import GoogleLoginComponent from "../components/GoogleLoginComponent.tsx";
 import { useNavigate } from "react-router-dom";
 import SpotifyLoginComponent from "../components/SpotifyLoginComponent.tsx";

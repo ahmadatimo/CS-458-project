@@ -14,6 +14,7 @@ const SpotifyLoginComponent: React.FC = () => {
 
   return (
     <button
+      name="Spotify"
       onClick={handleSpotifyLogin}
       className="w-full flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
     >
