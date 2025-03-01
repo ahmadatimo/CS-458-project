@@ -4,7 +4,7 @@
 This project aims to develop a web application, which consists of a **frontend** built with React and a **backend** built with FastAPI. Users will be able to register, log in (using email/password, Google authentication, and Facebook authentication).
 
 ## Tasks
-- [ ] Implement user authentication (login, Google login, Facebook login)
+- [ ] Implement user authentication (login, Google login, Facebook login, Spotify login)
 - [ ] Write unit tests for backend and frontend components
 - [ ] Automate testing using Selenium
 
@@ -61,7 +61,8 @@ CS-458-PROJECT/
 2. Create and activate a virtual environment:
    ```sh
    python -m venv venv
-   venv\Scripts\activate      # On Windows & Mac
+   venv\Scripts\activate      # On Windows 
+   source venv/Scripts/activate #On Mac
    ```
 3. Install dependencies:
    ```sh
