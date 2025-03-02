@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routes import login  # Import the login route
+from app.routes.login import router as login_router
 
 app = FastAPI()
 
@@ -9,13 +9,11 @@ origins = [
     "http://localhost:3000",  # frontend URL
 ]
 
-app.add_middleware(CORSMiddleware,allow_origins=origins,allow_credentials=True, allow_methods=["*"], allow_headers=["*"],)
-
+app.add_middleware(CORSMiddleware, allow_origins=origins, allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 
 @app.get("/")
 def home():
     return {"message": "YA halal Wallah"}
 
-
 # Include login routes
-app.include_router(login.router)
+app.include_router(login_router)
