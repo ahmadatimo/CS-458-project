@@ -73,8 +73,8 @@ CS-458-PROJECT/
 │
 │── selenium/  # Placeholder for Selenium tests
 │   ├──project_1/
-│   │   ├── chromedriver.exe
-│   │   ├── chromedriver    
+│   │   ├── chromedriver.exe   # for windows
+│   │   ├── chromedriver       # for macOS/Linux
 │   │   ├── run_tests.py
 │   │   ├── test1.py
 │   │   ├── test2.py
@@ -157,7 +157,7 @@ CS-458-PROJECT/
    ```sh
    python run_tests.py
    ```
-
+NOTE: uncomment 8th and comment 11th line of each test if you are a macOS/Linux user. Ifyou are windows user then tests are prepared for you.
 ---
 
 
