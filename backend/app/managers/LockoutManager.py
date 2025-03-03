@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from fastapi import HTTPException
 
 class LockoutManager:
-    def __init__(self, user, max_attempts=5, lockout_duration=timedelta(minutes=5)):
+    def __init__(self, user, max_attempts=5, lockout_duration=timedelta(minutes=1)):
         self.user = user
         self.MAX_ATTEMPTS = max_attempts
         self.LOCKOUT_DURATION = lockout_duration

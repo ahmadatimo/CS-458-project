@@ -4,8 +4,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 
-# Create a WebDriver service Mac Version
-#service = Service(executable_path="/Users/amirahani/Desktop/Git/git/Project/CS-458-project/selenium/project_1/chromedriver")
+# Create a WebDriver service macOS/linux Version
+#service = Service(executable_path="/Users/(Name of user)/Desktop/Git/git/Project/CS-458-project/selenium/project_1/chromedriver")
 
 # Create a WebDriver service Windows Version
 service = Service(executable_path="chromedriver.exe")
