@@ -135,7 +135,7 @@ CS-458-PROJECT/
    ```
    The frontend should now be accessible at `http://localhost:3000`.
 
-### Running the test files
+### Running the test files (Selenium)
 #### Prerequisites:
 - google chrome installed
 - having latest Chromedriver compatible with chrome version (already in selenium/project_1/)
