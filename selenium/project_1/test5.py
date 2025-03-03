@@ -30,52 +30,16 @@ time.sleep(2)
 login.send_keys(Keys.ENTER)
 time.sleep(2)
 
-
-password.clear()
-time.sleep(2)
-
-
-password.send_keys("eatCh0lklate")
+login.send_keys(Keys.ENTER)
 time.sleep(2)
 
 login.send_keys(Keys.ENTER)
 time.sleep(2)
 
-
-password.clear()
-time.sleep(2)
-
-password.send_keys("eatCh0lklate")
-time.sleep(2)
-
 login.send_keys(Keys.ENTER)
 time.sleep(2)
 
-
-password.clear()
-time.sleep(2)
-
-password.send_keys("eatCh0lklate")
-time.sleep(2)
-
 login.send_keys(Keys.ENTER)
-time.sleep(2)
-
-
-password.clear()
-time.sleep(2)
-
-password.send_keys("eatCh0lklate")
-time.sleep(2)
-
-login.send_keys(Keys.ENTER)
-time.sleep(2)
-
-
-password.clear()
-time.sleep(2)
-
-password.send_keys("eatCh0lklate")
 time.sleep(2)
 
 login.send_keys(Keys.ENTER)

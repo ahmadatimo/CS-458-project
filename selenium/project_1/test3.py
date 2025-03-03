@@ -48,6 +48,9 @@ time.sleep(2)
 email.clear()
 time.sleep(2)
 
+email.send_keys("@hogwarts.com")
+time.sleep(2)
+
 login.send_keys(Keys.ENTER)
 
 

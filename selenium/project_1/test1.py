@@ -8,7 +8,7 @@ import time
 service = Service(executable_path="chromedriver.exe")
 
 # Start Chrome WebDriver with the service
-driver = webdriver.Chrome(service=service)  # ✅ 'service' should be lowercase
+driver = webdriver.Chrome(service=service) 
 
 # Open the frontend (Vite default port)
 driver.get("http://localhost:3000")
@@ -22,6 +22,10 @@ password = driver.find_element(By.NAME, "password")
 login = driver.find_element(By.NAME, "submit")
 
 time.sleep(1)
+
+# log in with an empty email & password
+login.send_keys(Keys.ENTER)
+time.sleep(2)
 
 # add an email
 email.send_keys("lupin@hogwarts.com")

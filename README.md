@@ -11,9 +11,30 @@ This project aims to develop a web application, which consists of a **frontend**
 ## Repository Structure
 ```
 CS-458-PROJECT/
-│── backend/
+│── backend/x
 │   ├── app/
+│   │   ├── __pycache__/
+│   │   ├── database/
+│   │   │   ├── __pycache__/
+│   │   │   ├── __init__.py
+│   │   │   ├── users_db.py
+│   │   ├── managers/
+│   │   │   ├── __pycache__/
+│   │   │   ├── __init__.py
+│   │   │   ├── AuthManager.py
+│   │   │   ├── LockoutManager.py
+│   │   │   ├── LoginManager.py
+│   │   │   ├── LogoutManager.py
+│   │   │   ├── PasswordValidator.py
+│   │   │   ├── SpotifyOAuthManager.py
+│   │   │   ├── UserManager.py
+│   │   ├── models/
+│   │   │   ├── __pycache__/
+│   │   │   ├── __init__.py
+│   │   │   ├── LoginRequest.py
 │   │   ├── routes/
+│   │   │   ├── __pycache__/
+│   │   │   ├── __init__.py
 │   │   │   ├── login.py
 │   │   ├── __main__.py
 │   │   ├── main.py
@@ -25,6 +46,14 @@ CS-458-PROJECT/
 │   │   ├── vite.svg
 │   ├── src/
 │   │   ├── assets/
+│   │   │   ├── vite.svg
+│   │   ├── components/
+│   │   │   ├── GoogleLoginComponent.tsx
+│   │   │   ├── NormalLoginComponent.tsx
+│   │   │   ├── SpotifyLoginComponent.tsx
+│   │   ├── pages/
+│   │   │   ├── LoginPage.tsx
+│   │   │   ├── SuccessfulPage.tsx
 │   │   ├── App.tsx
 │   │   ├── index.css
 │   │   ├── main.tsx
@@ -43,6 +72,15 @@ CS-458-PROJECT/
 │   ├── vite.config.ts
 │
 │── selenium/  # Placeholder for Selenium tests
+│   ├──project_1/
+│   │   ├── chromedriver.exe
+│   │   ├── test1.py
+│   │   ├── test2.py
+│   │   ├── test3.py
+│   │   ├── test4.py
+│   │   ├── test5.py
+│
+│── .cache_ggshield # git Gaurdian for protection granted by Spotify API
 │── README.md  # Project documentation
 ```
 
@@ -64,6 +102,8 @@ CS-458-PROJECT/
    venv\Scripts\activate      # On Windows 
    source venv/Scripts/activate #On Mac
    ```
+   Note: If venv didn't work delete it and create it one more time using step 2
+
 3. Install dependencies:
    ```sh
    pip install fastapi uvicorn
@@ -94,6 +134,30 @@ CS-458-PROJECT/
    npm run dev
    ```
    The frontend should now be accessible at `http://localhost:3000`.
+
+### Running the test files
+#### Prerequisites:
+- google chrome installed
+- having latest Chromedriver compatible with chrome version (already in selenium/project_1/)
+
+#### Steps:
+1. Install dependencies:  
+   ```sh
+   pip install selenium
+   ```
+2. Navigate to the selenium folder:
+   ```sh
+   cd selenium/project_1
+   ```
+3. Run a specific test file, for example, test1.py:
+   ```sh
+   python test1.py
+   ```
+4. Run all test files (optional):
+   ```sh
+   Get-ChildItem test*.py | ForEach-Object { python $_.FullName }  # For Windows (Command Prompt)
+   for file in test*.py; do python "$file"; done  # For Mac/Linux
+   ```
 
 ---
 
