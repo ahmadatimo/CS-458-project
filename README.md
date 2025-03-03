@@ -157,7 +157,7 @@ CS-458-PROJECT/
    ```sh
    python run_tests.py
    ```
-NOTE: uncomment 8th and comment 11th line of each test if you are a macOS/Linux user. Ifyou are windows user then tests are prepared for you.
+NOTE: uncomment 8th and comment 11th line of each test file if you are a macOS/Linux user. If you are windows user then tests are prepared for you.
 ---
 
 
