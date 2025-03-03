@@ -73,8 +73,8 @@ CS-458-PROJECT/
 │
 │── selenium/  # Placeholder for Selenium tests
 │   ├──project_1/
-│   │   ├── chromedriver.exe
-│   │   ├── chromedriver    
+│   │   ├── chromedriver.exe   # for windows
+│   │   ├── chromedriver       # for macOS/Linux
 │   │   ├── run_tests.py
 │   │   ├── test1.py
 │   │   ├── test2.py
@@ -135,7 +135,7 @@ CS-458-PROJECT/
    ```
    The frontend should now be accessible at `http://localhost:3000`.
 
-### Running the test files
+### Running the test files (Selenium)
 #### Prerequisites:
 - google chrome installed
 - having latest Chromedriver compatible with chrome version (already in selenium/project_1/)
@@ -157,7 +157,7 @@ CS-458-PROJECT/
    ```sh
    python run_tests.py
    ```
-
+NOTE: uncomment 8th and comment 11th line of each test if you are a macOS/Linux user. Ifyou are windows user then tests are prepared for you.
 ---
 
 
