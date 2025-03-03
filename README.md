@@ -74,6 +74,8 @@ CS-458-PROJECT/
 │── selenium/  # Placeholder for Selenium tests
 │   ├──project_1/
 │   │   ├── chromedriver.exe
+│   │   ├── chromedriver    
+│   │   ├── run_tests.py
 │   │   ├── test1.py
 │   │   ├── test2.py
 │   │   ├── test3.py
@@ -153,8 +155,7 @@ CS-458-PROJECT/
    ```
 4. Run all test files (optional):
    ```sh
-   Get-ChildItem test*.py | ForEach-Object { python $_.FullName }  # For Windows (Command Prompt)
-   for file in test*.py; do python "$file"; done  # For Mac/Linux
+   python run_tests.py
    ```
 
 ---

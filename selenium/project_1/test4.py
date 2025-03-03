@@ -5,6 +5,9 @@ from selenium.webdriver.common.keys import Keys
 import time
 
 # Create a WebDriver service
+#service = Service(executable_path="/Users/amirahani/Desktop/Git/git/Project/CS-458-project/selenium/project_1/chromedriver")
+
+# Create a WebDriver service Windows Version
 service = Service(executable_path="chromedriver.exe")
 
 # Start Chrome WebDriver with the service
