@@ -102,8 +102,6 @@ CS-458-PROJECT/
    venv\Scripts\activate      # On Windows 
    source venv/Scripts/activate #On Mac
    ```
-   Note: If venv didn't work delete it and create it one more time using step 2
-
 3. Install dependencies:
    ```sh
    pip install fastapi uvicorn
